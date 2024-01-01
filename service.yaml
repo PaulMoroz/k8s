@@ -4,9 +4,9 @@ metadata:
   name: flask-hello-world-service
 spec:
   type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30007  # Optional: Specify a nodePort in range 30000-32767 if you want a specific port
   selector:
     app: flask-hello-world
-  ports:
-    - protocol: TCP
-      port: 5000
-      nodePort: 30000
